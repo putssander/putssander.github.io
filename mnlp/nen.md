@@ -1,3 +1,3 @@
-** Medical entity linking **
+# Medical entity linking #
 
 Overview of shared tasks
