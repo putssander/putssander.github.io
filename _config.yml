@@ -1,8 +1,8 @@
 title: Sander Puts
-tagline: Clinical NLP researcher & app developer
+tagline: Clinical NLP researcher & human-centred AI builder
 description: >-
-  Researcher in Clinical NLP and app developer. Building privacy-first tools
-  for healthcare language, clinical trials, and news.
+  Researcher at Maastro Clinic and Maastricht University, working on Clinical
+  NLP and human-centred AI. Building Actuelly and shaping Augible.
 url: "https://sanderputs.com"
 author:
   name: Sander Puts
@@ -11,7 +11,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/og-v2.png
+      image: /assets/images/og-v3.png
 
 permalink: /blog/:year/:month/:title/
 

@@ -4,7 +4,7 @@ layout: default
 <section class="hero" aria-labelledby="intro-title">
   <div class="hero-topline">
     <p>Sander Puts</p>
-    <p>Clinical NLP × Independent software</p>
+    <p>Clinical NLP × Human-centred AI</p>
     <p>NL — {{ 'now' | date: '%Y' }}</p>
   </div>
 
@@ -21,8 +21,8 @@ layout: default
     <div class="glass-note">
       <p class="note-index">Field note / 001</p>
       <p>
-        I’m a researcher and independent developer working where language,
-        healthcare, and software meet.
+        I’m a researcher at Maastro Clinic and Maastricht University, working
+        where language, healthcare, and human-centred AI meet.
       </p>
       <a class="arrow-link" href="#actuelly">See what I’m making <span aria-hidden="true">↓</span></a>
     </div>
@@ -63,7 +63,7 @@ layout: default
 
     <div class="featured-main">
       <div>
-        <p class="featured-label">Independent project</p>
+        <p class="featured-label">{{ project.context | escape }}</p>
         <h2 id="actuelly-title"><a href="{{ project.url }}">{{ project.name }}</a></h2>
       </div>
       <div class="featured-copy">
@@ -78,10 +78,14 @@ layout: default
 
 <section id="projects" class="work-section" aria-labelledby="projects-title">
   <header class="section-intro section-intro-large">
-    <p class="section-index">02 — Selected work</p>
+    <p class="section-index">02 — Clinical Data Science</p>
     <div>
       <h2 id="projects-title">Built for real<br>questions.</h2>
-      <p class="section-summary">Small, focused tools for medical language and clinical research.</p>
+      <p class="section-summary">
+        Research and tools developed within Clinical Data Science at Maastro
+        Clinic and Maastricht University.
+        <a href="https://www.clinicaldatascience.nl/sander-puts">View my CDS profile ↗</a>
+      </p>
     </div>
   </header>
 
@@ -92,7 +96,7 @@ layout: default
       <div class="project-meta">
         <span>0{{ forloop.index }}</span>
         <span>{{ project.tag | escape }}</span>
-        <span>{{ project.status | escape }}</span>
+        <span>{{ project.context | escape }}</span>
       </div>
       <h3><a href="{{ project.url }}">{{ project.name }}</a></h3>
       <p>{{ project.description | escape }}</p>
@@ -104,6 +108,19 @@ layout: default
     {% endunless %}
     {% endfor %}
   </div>
+
+  <aside class="research-foundation" aria-labelledby="thesis-title">
+    <p class="foundation-label">Research foundation / PhD thesis</p>
+    <div>
+      <h3 id="thesis-title">Harmonized steps</h3>
+      <p>
+        My clinical work centres on hybrid human–AI assistants embedded in real
+        workflows: helping radiologists structure reports and supporting ICD-10
+        coding, while keeping validation and correction in human hands.
+      </p>
+    </div>
+    <a class="project-link" href="https://cris.maastrichtuniversity.nl/en/publications/harmonized-steps-orchestrating-healthcare-transformation-with-nat/">Read the thesis <span aria-hidden="true">↗</span></a>
+  </aside>
 </section>
 
 <section id="writing" class="writing-section" aria-labelledby="writing-title">
@@ -130,23 +147,50 @@ layout: default
   {% endif %}
 </section>
 
+<section id="augible" class="augible-section" aria-labelledby="augible-title">
+  <header class="section-intro">
+    <p class="section-index">04 — Company direction</p>
+    <p class="section-note">A name for what comes next</p>
+  </header>
+
+  <div class="augible-card">
+    <div class="augible-mark" aria-hidden="true">
+      <span>au</span>
+      <i></i>
+    </div>
+    <div class="augible-copy">
+      <p class="augible-label">Augment + able</p>
+      <h2 id="augible-title">Augible</h2>
+      <p class="augible-thesis">To augment human skills with AI.</p>
+      <p class="augible-note">
+        Augible is the company direction: hybrid human–AI tools designed to
+        extend what people can do while keeping human skill and judgment at the
+        centre.
+      </p>
+    </div>
+  </div>
+</section>
+
 <section id="about" class="about-section" aria-labelledby="about-title">
   <div class="about-orbit" aria-hidden="true"><span></span><i></i></div>
   <div class="about-heading">
-    <p class="section-index">04 — About</p>
+    <p class="section-index">05 — About</p>
     <h2 id="about-title">Rigorous<br><em>and human.</em></h2>
   </div>
   <div class="about-copy">
     <p>
-      My work sits where language, healthcare, and software meet. I’m interested
-      in systems that are precise enough for research and humane enough for
-      everyday use.
+      My work sits where language, healthcare, and AI meet. At Clinical Data
+      Science, I build intelligent assistants for clinical workflows. Outside
+      that work, I’m developing Actuelly as a private project and shaping the
+      direction for Augible.
     </p>
     <nav class="profile-links" aria-label="Profiles">
+      <a href="https://www.clinicaldatascience.nl/sander-puts">CDS profile <span aria-hidden="true">↗</span></a>
       <a href="https://github.com/putssander">GitHub <span aria-hidden="true">↗</span></a>
       <a href="https://scholar.google.com/citations?user=NxRF8PIAAAAJ&amp;hl=en">Scholar <span aria-hidden="true">↗</span></a>
       <a href="https://orcid.org/0000-0003-4148-1755">ORCID <span aria-hidden="true">↗</span></a>
       <a href="https://www.linkedin.com/in/sander-puts-66070557/">LinkedIn <span aria-hidden="true">↗</span></a>
+      <a href="https://cris.maastrichtuniversity.nl/en/persons/sander-puts">Research output <span aria-hidden="true">↗</span></a>
     </nav>
   </div>
 </section>

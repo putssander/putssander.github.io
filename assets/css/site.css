@@ -150,6 +150,7 @@ a:focus-visible {
 .featured-section,
 .work-section,
 .writing-section,
+.augible-section,
 .about-section {
   scroll-margin-top: 7rem;
 }
@@ -430,6 +431,7 @@ a:focus-visible {
 .featured-section,
 .work-section,
 .writing-section,
+.augible-section,
 .about-section {
   padding: clamp(5rem, 9vw, 9rem) clamp(1.5rem, 5vw, 5.5rem);
 }
@@ -475,6 +477,16 @@ a:focus-visible {
   color: var(--muted);
   font-size: clamp(1rem, 1.5vw, 1.3rem);
   letter-spacing: -0.02em;
+}
+
+.section-summary a {
+  display: inline-block;
+  margin-top: 0.9rem;
+  color: var(--blue);
+  font-size: 0.7rem;
+  font-weight: 730;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
 }
 
 /* Actuelly as a signal, not a Mondrian panel */
@@ -707,6 +719,46 @@ a:focus-visible {
   border-top: 1px solid currentColor;
 }
 
+.research-foundation {
+  margin-top: clamp(3rem, 7vw, 7rem);
+  padding: clamp(1.5rem, 3vw, 2.75rem);
+  display: grid;
+  grid-template-columns: minmax(150px, 0.23fr) minmax(0, 0.54fr) minmax(170px, 0.23fr);
+  align-items: end;
+  gap: clamp(1.5rem, 4vw, 5rem);
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.foundation-label {
+  align-self: start;
+  margin: 0;
+  color: var(--blue);
+  font-size: 0.68rem;
+  font-weight: 720;
+  letter-spacing: 0.11em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.research-foundation h3 {
+  margin: 0 0 1.25rem;
+  font-family: Iowan Old Style, Baskerville, "Times New Roman", serif;
+  font-size: clamp(2.3rem, 4.5vw, 4.8rem);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.9;
+}
+
+.research-foundation div > p {
+  max-width: 55ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(0.98rem, 1.3vw, 1.15rem);
+}
+
 /* Notes */
 .writing-section {
   background: var(--chalk-light);
@@ -759,6 +811,120 @@ a:focus-visible {
 .empty-note {
   color: var(--muted);
   font-style: italic;
+}
+
+/* Augible: a distinct company direction */
+.augible-section {
+  background: #e9e7ff;
+}
+
+.augible-card {
+  position: relative;
+  min-height: 560px;
+  overflow: hidden;
+  padding: clamp(2rem, 5vw, 5.5rem);
+  display: grid;
+  grid-template-columns: minmax(300px, 0.45fr) minmax(0, 0.55fr);
+  align-items: center;
+  gap: clamp(3rem, 8vw, 9rem);
+  border: 1px solid rgba(21, 23, 25, 0.25);
+  border-radius: 38px 4px 38px 4px;
+  background:
+    radial-gradient(circle at 72% 20%, rgba(216, 255, 79, 0.5), transparent 18%),
+    rgba(255, 255, 255, 0.56);
+  box-shadow: 0 30px 80px rgba(64, 60, 110, 0.11);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.augible-mark {
+  position: relative;
+  width: min(32vw, 390px);
+  min-width: 300px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(21, 23, 25, 0.5);
+  border-radius: 50%;
+}
+
+.augible-mark::before,
+.augible-mark::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(69, 84, 255, 0.58);
+  border-radius: 50%;
+}
+
+.augible-mark::before {
+  inset: 12%;
+  transform: rotate(35deg) scaleY(0.55);
+}
+
+.augible-mark::after {
+  inset: -7%;
+  border-style: dashed;
+  transform: rotate(-28deg) scaleY(0.44);
+}
+
+.augible-mark span {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(5rem, 11vw, 10rem);
+  font-weight: 760;
+  letter-spacing: -0.11em;
+  line-height: 1;
+}
+
+.augible-mark i {
+  position: absolute;
+  top: 14%;
+  right: 14%;
+  z-index: 3;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--coral);
+  box-shadow: 0 0 0 8px rgba(255, 101, 75, 0.13);
+}
+
+.augible-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.augible-label {
+  margin: 0 0 1.2rem;
+  color: var(--blue);
+  font-size: 0.68rem;
+  font-weight: 720;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.augible-copy h2 {
+  margin: 0;
+  font-size: clamp(4.4rem, 10vw, 10.5rem);
+  font-weight: 760;
+  letter-spacing: -0.095em;
+  line-height: 0.72;
+}
+
+.augible-thesis {
+  max-width: 17ch;
+  margin: clamp(2rem, 4vw, 3.5rem) 0 1.5rem;
+  font-family: Iowan Old Style, Baskerville, "Times New Roman", serif;
+  font-size: clamp(1.9rem, 3.4vw, 3.6rem);
+  font-style: italic;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.augible-note {
+  max-width: 48ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(0.98rem, 1.3vw, 1.15rem);
 }
 
 /* About */
@@ -872,7 +1038,7 @@ a:focus-visible {
 }
 
 /* Notes index and individual articles */
-.site-main > section:not(.hero):not(.featured-section):not(.work-section):not(.writing-section):not(.about-section),
+.site-main > section:not(.hero):not(.featured-section):not(.work-section):not(.writing-section):not(.augible-section):not(.about-section),
 .post {
   min-height: 72vh;
   padding: 10rem clamp(1.5rem, 8vw, 9rem) 5rem;
@@ -1080,6 +1246,7 @@ a:focus-visible {
   .featured-section,
   .work-section,
   .writing-section,
+  .augible-section,
   .about-section {
     padding-right: 1.2rem;
     padding-left: 1.2rem;
@@ -1161,6 +1328,27 @@ a:focus-visible {
     padding-top: 0;
   }
 
+  .research-foundation {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .research-foundation .project-link {
+    margin-top: 0.5rem;
+  }
+
+  .augible-card {
+    min-height: 680px;
+    grid-template-columns: 1fr;
+    align-content: center;
+  }
+
+  .augible-mark {
+    width: min(78vw, 330px);
+    min-width: 0;
+    margin: 0 auto;
+  }
+
   .project-card,
   .project-card:nth-child(1),
   .project-card:nth-child(2),
@@ -1206,7 +1394,7 @@ a:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .site-main > section:not(.hero):not(.featured-section):not(.work-section):not(.writing-section):not(.about-section),
+  .site-main > section:not(.hero):not(.featured-section):not(.work-section):not(.writing-section):not(.augible-section):not(.about-section),
   .post {
     padding: 8rem 1.2rem 4rem;
   }

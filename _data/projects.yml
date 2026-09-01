@@ -3,6 +3,7 @@
   tag: iPhone & Mac app
   status: Coming soon
   featured: true
+  context: Private project
   description: >-
     A personal news project — a new way to read the news, coming to iPhone
     and Mac.
@@ -11,6 +12,7 @@
   url: https://medmorf.com
   tag: Web app
   status: Live
+  context: Clinical Data Science
   description: >-
     Privacy-first AI processing of medical documents, entirely on-device.
     Translate between 200+ languages, anonymize, summarize, and transcribe —
@@ -20,6 +22,7 @@
   url: https://putssander.github.io/trialschema/
   tag: Web app
   status: Live
+  context: Clinical Data Science
   description: >-
     Structure clinical trial criteria for AI-powered patient eligibility
     matching. Import trials from Excel, CSV, or JSON, normalize them for LLMs,
@@ -29,6 +32,7 @@
   url: https://putssander.github.io/4dpicture-danish/demo/index.html
   tag: Research demo
   status: Demo
+  context: Clinical Data Science
   description: >-
     A human-in-the-loop pipeline for finding the metaphors people use to
     describe illness. Software proposes and ranks candidate expressions;
