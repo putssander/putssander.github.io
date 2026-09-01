@@ -11,7 +11,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/og.png
+      image: /assets/images/og-v2.png
 
 permalink: /blog/:year/:month/:title/
 
