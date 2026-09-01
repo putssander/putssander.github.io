@@ -1,19 +1,21 @@
 ---
 layout: default
-title: Blog
+title: Notes
 ---
 <section>
-  <h2 class="section-title" style="padding-top: 1.5rem;">Blog</h2>
+  <p class="section-kicker">Research, process, and experiments</p>
+  <h1 class="section-title">Field notes.</h1>
   {% if site.posts.size > 0 %}
   <ul class="post-list">
     {% for post in site.posts %}
     <li>
-      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span aria-hidden="true">↗</span>
     </li>
     {% endfor %}
   </ul>
   {% else %}
-  <p class="empty-note">Nothing here yet — first post coming soon.</p>
+  <p class="empty-note">First note coming soon.</p>
   {% endif %}
 </section>

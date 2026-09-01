@@ -7,6 +7,12 @@ url: "https://putssander.github.io"
 author:
   name: Sander Puts
 
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/og.png
+
 permalink: /blog/:year/:month/:title/
 
 plugins:

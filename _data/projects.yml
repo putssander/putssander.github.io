@@ -1,3 +1,12 @@
+- name: Actuelly
+  url: https://actuelly.com
+  tag: iPhone & Mac app
+  status: Coming soon
+  featured: true
+  description: >-
+    A personal news project — a new way to read the news, coming to iPhone
+    and Mac.
+
 - name: Medmorf
   url: https://medmorf.com
   tag: Web app
@@ -25,11 +34,3 @@
     describe illness. Software proposes and ranks candidate expressions;
     researchers and patient advisors decide. Built toward a multilingual
     Metaphor Menu, starting with Danish, as part of the 4D PICTURE project.
-
-- name: Actuelly
-  url: https://actuelly.com
-  tag: iPhone & Mac app
-  status: Coming soon
-  description: >-
-    A personal news project — a new way to read the news, coming to iPhone
-    and Mac.
