@@ -1,0 +1,35 @@
+- name: Medmorf
+  url: https://medmorf.com
+  tag: Web app
+  status: Live
+  description: >-
+    Privacy-first AI processing of medical documents, entirely on-device.
+    Translate between 200+ languages, anonymize, summarize, and transcribe —
+    nothing ever leaves the browser.
+
+- name: TrialSchema
+  url: https://putssander.github.io/trialschema/
+  tag: Web app
+  status: Live
+  description: >-
+    Structure clinical trial criteria for AI-powered patient eligibility
+    matching. Import trials from Excel, CSV, or JSON, normalize them for LLMs,
+    and review the results — no backend, no telemetry.
+
+- name: Metaphor Discovery
+  url: https://putssander.github.io/4dpicture-danish/demo/index.html
+  tag: Research demo
+  status: Demo
+  description: >-
+    A human-in-the-loop pipeline for finding the metaphors people use to
+    describe illness. Software proposes and ranks candidate expressions;
+    researchers and patient advisors decide. Built toward a multilingual
+    Metaphor Menu, starting with Danish, as part of the 4D PICTURE project.
+
+- name: Actuelly
+  url: https://actuelly.com
+  tag: iPhone & Mac app
+  status: Coming soon
+  description: >-
+    A personal news project — a new way to read the news, coming to iPhone
+    and Mac.

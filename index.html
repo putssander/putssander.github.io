@@ -1,0 +1,51 @@
+---
+layout: default
+---
+<section class="hero">
+  <h1>Hi, I'm Sander Puts.<br>
+    I work on <span class="accent">Clinical NLP</span> and build apps.</h1>
+  <p class="lede">
+    Researcher in Clinical Natural Language Processing and independent app
+    developer. I build privacy-first tools that help people work with medical
+    language, clinical trials, and the news.
+  </p>
+  <p class="profile-links">
+    <a href="https://github.com/putssander">GitHub</a>
+    <a href="https://scholar.google.com/citations?user=NxRF8PIAAAAJ&amp;hl=en">Google Scholar</a>
+    <a href="https://orcid.org/0000-0003-4148-1755">ORCID</a>
+    <a href="https://www.linkedin.com/in/sander-puts-66070557/">LinkedIn</a>
+  </p>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-grid">
+    {% for project in site.data.projects %}
+    <div class="card">
+      <h3><a href="{{ project.url }}">{{ project.name }}</a></h3>
+      <p class="meta">{{ project.tag }}<span class="badge">{{ project.status }}</span></p>
+      <p>{{ project.description }}</p>
+      <a class="visit" href="{{ project.url }}">
+        {%- if project.status == "Demo" %}Try the demo &rarr;{% else %}Visit &rarr;{% endif -%}
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="writing">
+  <h2 class="section-title">Latest writing</h2>
+  {% if site.posts.size > 0 %}
+  <ul class="post-list">
+    {% for post in site.posts limit: 5 %}
+    <li>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  <p><a href="{{ '/blog/' | relative_url }}">All posts &rarr;</a></p>
+  {% else %}
+  <p class="empty-note">Nothing here yet — first post coming soon.</p>
+  {% endif %}
+</section>

@@ -1,0 +1,19 @@
+---
+layout: default
+title: Blog
+---
+<section>
+  <h2 class="section-title" style="padding-top: 1.5rem;">Blog</h2>
+  {% if site.posts.size > 0 %}
+  <ul class="post-list">
+    {% for post in site.posts %}
+    <li>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty-note">Nothing here yet — first post coming soon.</p>
+  {% endif %}
+</section>

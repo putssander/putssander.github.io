@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🩺</text></svg>">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="wrap">
+      <a class="site-name" href="{{ '/' | relative_url }}">Sander Puts</a>
+      <div class="nav-links">
+        <a href="{{ '/#projects' | relative_url }}">Projects</a>
+        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+        <a href="https://github.com/putssander">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© {{ 'now' | date: '%Y' }} Sander Puts ·
+        <a href="https://github.com/putssander">GitHub</a> ·
+        <a href="https://scholar.google.com/citations?user=NxRF8PIAAAAJ&amp;hl=en">Scholar</a> ·
+        <a href="https://orcid.org/0000-0003-4148-1755">ORCID</a> ·
+        <a href="https://www.linkedin.com/in/sander-puts-66070557/">LinkedIn</a> ·
+        <a href="mailto:putssander@gmail.com">Email</a> ·
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
