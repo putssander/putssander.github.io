@@ -18,13 +18,16 @@
 }
 
 html {
+  min-height: 100%;
   scroll-behavior: smooth;
   scroll-padding-top: 7rem;
+  background: var(--chalk);
 }
 
 body {
+  min-height: 100%;
   margin: 0;
-  background: #d8d8d2;
+  background: var(--chalk);
   color: var(--ink);
   font-family: "Helvetica Neue", "Neue Haas Grotesk Text Pro", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -75,7 +78,7 @@ a:focus-visible {
 .site-nav {
   width: min(920px, calc(100vw - 36px));
   min-height: 62px;
-  margin: 14px auto 0;
+  margin: calc(14px + env(safe-area-inset-top, 0px)) auto 0;
   padding: 0 10px 0 12px;
   display: flex;
   align-items: center;
@@ -174,7 +177,7 @@ a:focus-visible {
 .hero {
   position: relative;
   min-height: max(820px, 100svh);
-  padding: clamp(8.5rem, 16vh, 12rem) clamp(1.5rem, 5vw, 5.5rem) clamp(2.5rem, 5vw, 4.5rem);
+  padding: calc(clamp(8.5rem, 16vh, 12rem) + env(safe-area-inset-top, 0px)) clamp(1.5rem, 5vw, 5.5rem) clamp(2.5rem, 5vw, 4.5rem);
   background:
     radial-gradient(circle at 88% 16%, rgba(69, 84, 255, 0.14), transparent 21%),
     radial-gradient(circle at 72% 80%, rgba(255, 101, 75, 0.12), transparent 20%),
@@ -1141,6 +1144,7 @@ a:focus-visible {
   padding: clamp(3rem, 6vw, 5.5rem) clamp(1.5rem, 5vw, 5.5rem);
   background: var(--ink);
   color: #f8f6ef;
+  padding-bottom: calc(clamp(3rem, 6vw, 5.5rem) + env(safe-area-inset-bottom, 0px));
 }
 
 .footer-inner {
@@ -1224,7 +1228,7 @@ a:focus-visible {
   .site-nav {
     width: calc(100vw - 20px);
     min-height: 56px;
-    margin-top: 10px;
+    margin-top: calc(10px + env(safe-area-inset-top, 0px));
     padding-left: 9px;
   }
 
@@ -1254,7 +1258,7 @@ a:focus-visible {
 
   .hero {
     min-height: auto;
-    padding-top: 7.5rem;
+    padding-top: calc(7.5rem + env(safe-area-inset-top, 0px));
   }
 
   .hero-topline {
