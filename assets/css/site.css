@@ -69,10 +69,16 @@ a:focus-visible {
 
 /* Glass navigation */
 .site-header {
-  position: sticky;
+  /* Safari 26 ignores theme-color and tints its status bar from a
+     position: fixed (not sticky) element touching the top edge, ≥3px tall.
+     A translucent blurred strip makes that tint follow the content beneath. */
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 30;
-  height: 0;
+  height: 4px;
+  background: rgba(247, 246, 241, 0.02);
 }
 
 .site-nav {
