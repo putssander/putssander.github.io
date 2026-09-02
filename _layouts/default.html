@@ -43,5 +43,14 @@
       </div>
     </div>
   </footer>
+  <script>
+    (function () {
+      var footer = document.querySelector('.site-footer');
+      if (!footer || !('IntersectionObserver' in window)) return;
+      new IntersectionObserver(function (entries) {
+        document.body.classList.toggle('at-end', entries[0].isIntersecting);
+      }).observe(footer);
+    })();
+  </script>
 </body>
 </html>

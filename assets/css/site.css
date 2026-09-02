@@ -27,7 +27,12 @@ html {
 body {
   min-height: 100%;
   margin: 0;
-  background: var(--chalk);
+  /* iOS 26 Safari fills the area it scrolls past the document end (under
+     its toolbar) with the body background-color, and re-samples it when it
+     changes. The image layer keeps the visible body chalk while .at-end
+     (set when the footer is in view) turns that fill ink to match. */
+  background-color: var(--chalk);
+  background-image: linear-gradient(var(--chalk), var(--chalk));
   color: var(--ink);
   font-family: "Helvetica Neue", "Neue Haas Grotesk Text Pro", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -79,6 +84,10 @@ a:focus-visible {
   z-index: 30;
   height: 4px;
   background: rgba(247, 246, 241, 0.02);
+}
+
+body.at-end {
+  background-color: var(--ink);
 }
 
 .site-nav {
