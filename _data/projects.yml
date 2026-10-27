@@ -8,6 +8,17 @@
     A personal news project — a new way to read the news, coming to iPhone
     and Mac.
 
+- name: Canon & Praxis
+  url: https://github.com/putssander/canonpraxis
+  tag: Open source & models
+  status: Coming soon
+  context: Clinical Data Science
+  description: >-
+    Clinical coding by the official, human-written rulebook with local
+    language models. Each hospital's or dataset's conventions sit in their own
+    layer, and every code keeps a trace a coder can check. Code, notebooks and
+    models for our ICD-10 coding study.
+
 - name: Medmorf
   url: https://medmorf.com
   tag: Web app
