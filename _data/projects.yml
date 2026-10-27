@@ -8,8 +8,8 @@
     A personal news project — a new way to read the news, coming to iPhone
     and Mac.
 
-- name: CEI-trace
-  url: https://github.com/putssander/CEI-trace
+- name: CEI-Trace
+  url: https://github.com/putssander/CEI-Trace
   tag: Open source & models
   status: Coming soon
   context: Clinical Data Science
