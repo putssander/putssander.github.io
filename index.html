@@ -44,7 +44,7 @@ layout: default
         <div class="project-copy"><p>{{ project.description | escape }}</p>{% if project.note %}<p class="project-note">{{ project.note | escape }}</p>{% endif %}</div>
       </div>
       <div class="project-footer">
-        <p class="release-date">{{ project.release_label | escape }}{% if project.release_date %} <time datetime="{{ project.release_date }}">{{ project.release_date | date: "%d %b %Y" }}</time>{% endif %}</p>
+        <p class="release-date">{% if project.website_date %}Website published <time datetime="{{ project.website_date }}">{{ project.website_date | date: "%d %b %Y" }}</time><br>{% endif %}{{ project.release_label | escape }}{% if project.release_date %} <time datetime="{{ project.release_date }}">{{ project.release_date | date: "%d %b %Y" }}</time>{% endif %}</p>
         <div class="project-actions">
           {% if project.about_url %}<a href="{{ project.about_url }}">About the project <span aria-hidden="true">↗</span></a>{% endif %}
           {% if project.evaluation_url %}<a href="{{ project.evaluation_url }}">Evaluation <span aria-hidden="true">↗</span></a>{% endif %}
@@ -75,7 +75,7 @@ layout: default
       <p class="eyebrow">{{ project.tag | escape }} · {{ project.status | escape }}</p>
       <h3 id="{{ project.id }}-title">{% if project.url %}<a href="{{ project.url }}">{{ project.name | escape }}</a>{% else %}{{ project.name | escape }}{% endif %}</h3>
       <p>{{ project.description | escape }}</p>
-      <p class="release-date">{{ project.release_label | escape }}{% if project.release_date %} <time datetime="{{ project.release_date }}">{{ project.release_date | date: "%d %b %Y" }}</time>{% endif %}</p>
+      <p class="release-date">{% if project.website_date %}Website published <time datetime="{{ project.website_date }}">{{ project.website_date | date: "%d %b %Y" }}</time><br>{% endif %}{{ project.release_label | escape }}{% if project.release_date %} <time datetime="{{ project.release_date }}">{{ project.release_date | date: "%d %b %Y" }}</time>{% endif %}</p>
       {% if project.url %}<a class="arrow-link" href="{{ project.url }}">{{ project.link_label | escape }} <span aria-hidden="true">↗</span></a>{% endif %}
       </div>
     </article>
@@ -84,11 +84,11 @@ layout: default
 </section>
 
 <section id="project-index" class="index-section" aria-labelledby="index-title">
-  <header class="section-intro"><div><p class="section-index">03 / The index</p><h2 id="index-title">The work.<br>The details.</h2></div><p class="section-summary">Clinical research and independent projects, grouped separately with their status and first verified public release.</p></header>
+  <header class="section-intro"><div><p class="section-index">03 / The index</p><h2 id="index-title">The work.<br>The details.</h2></div><p class="section-summary">Clinical research and independent projects, grouped separately with their status, verified release dates and website publications.</p></header>
   <div class="overview-wrap">
     <table class="project-overview">
-      <caption class="sr-only">Project overview with current status and public release dates</caption>
-      <thead><tr><th scope="col">Project / focus</th><th scope="col">Status</th><th scope="col">Public release</th></tr></thead>
+      <caption class="sr-only">Project overview with current status, public release dates and website publication dates</caption>
+      <thead><tr><th scope="col">Project / focus</th><th scope="col">Status</th><th scope="col">Release / publication</th></tr></thead>
       {% assign categories = 'clinical,independent' | split: ',' %}
       {% for category in categories %}
       <tbody>
@@ -97,14 +97,14 @@ layout: default
         <tr>
           <th scope="row"><a href="#{{ project.id }}">{{ project.name | escape }} <span aria-hidden="true">↘</span></a><span class="overview-summary">{{ project.summary | escape }}</span></th>
           <td><span class="status-badge status-{{ project.status | slugify }}">{{ project.status | escape }}</span></td>
-          <td>{% if project.release_date %}<time datetime="{{ project.release_date }}">{{ project.release_date | date: "%d %b %Y" }}</time>{% elsif project.status == 'Live' %}<span class="date-pending">Date unconfirmed</span>{% else %}<span class="date-pending">To be announced</span>{% endif %}</td>
+          <td>{% if project.release_date %}<time datetime="{{ project.release_date }}">{{ project.release_date | date: "%d %b %Y" }}</time>{% elsif project.website_date %}<span class="date-pending">Website published</span><br><time datetime="{{ project.website_date }}">{{ project.website_date | date: "%d %b %Y" }}</time>{% elsif project.status == 'Live' %}<span class="date-pending">Date unconfirmed</span>{% else %}<span class="date-pending">To be announced</span>{% endif %}</td>
         </tr>
       {% endif %}{% endfor %}
       </tbody>
       {% endfor %}
     </table>
   </div>
-  <p class="release-note">Dates mark the first verified public release or demo publication. Unannounced and unconfirmed dates are shown explicitly.</p>
+  <p class="release-note">Dates mark verified public releases or demo publications. Website dates are labelled separately and do not indicate an app release. Unannounced and unconfirmed dates are shown explicitly.</p>
 
 </section>
 

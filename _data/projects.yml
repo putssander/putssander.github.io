@@ -11,7 +11,7 @@
   context: Clinical Data Science
   release_date: "2026-11-06"
   release_label: Demo released
-  release_source: "GitHub Pages: first successful build, 2026-11-06T16:54:08Z."
+  release_source: "GitHub Pages: first successful deployment, 2026-11-06T17:00:22Z; deployment 7605749756, job 128025615631."
   spotlight: true
   summary: Prepare a cancer-in-pregnancy case with guidelines and comparable earlier decisions.
   description: >-
@@ -31,7 +31,7 @@
   context: Clinical Data Science · 4D PICTURE
   release_date: "2026-08-28"
   release_label: Demo released
-  release_source: "GitHub Pages: first successful build, 2026-08-28T09:45:55Z."
+  release_source: "GitHub Pages: first successful deployment, 2026-08-28T09:46:20Z; deployment 6139083524, job 98814235114."
   summary: Find and review the metaphors people use to describe illness.
   description: >-
     Software proposes and ranks candidate expressions; researchers and patient
@@ -48,7 +48,7 @@
   context: Clinical Data Science
   release_date: "2026-05-20"
   release_label: Released
-  release_source: "GitHub Pages: first successful build, 2026-05-20T15:40:43Z."
+  release_source: "GitHub Pages: first successful deployment job 76996670948, completed 2026-05-20T15:41:34Z; deployment 4758259901."
   summary: Structure trial criteria for patient eligibility matching.
   description: >-
     Import clinical trials from Excel, CSV or JSON, normalise their eligibility
@@ -108,7 +108,9 @@
   status: Coming soon
   category: independent
   context: Independent project
-  release_label: Release to be announced
+  release_label: App release to be announced
+  website_date: "2026-08-31"
+  website_source: "Repository deployment note dated 2026-08-31 explicitly confirms the Actuelly teaser live on actuelly.com. Earlier July deployments were branded Interpretour; this is not an app-release date."
   summary: A new way to read the news on iPhone and Mac.
   description: >-
     A personal news project exploring a new way to read the news,
