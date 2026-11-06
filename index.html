@@ -25,13 +25,13 @@ layout: default
 <section id="projects" class="work-section" aria-labelledby="projects-title">
   <header class="section-intro">
     <div><p class="section-index">01 / Clinical Data Science</p><h2 id="projects-title">Clinical<br><em>research.</em></h2></div>
-    <p class="section-summary">Research software and demonstrations from my work at Maastro Clinic and Maastricht University. Focused on language, healthcare and human-centred AI.</p>
+    <p class="section-summary">Research software, demonstrations and tools built for the Clinical Data Science group at Maastro Clinic and Maastricht University. From language technology to keeping up with our research.</p>
   </header>
-  <div class="collection-label"><span>Selected research & demonstrations</span><span>{{ site.data.projects | where: "category", "clinical" | size }} projects ↓</span></div>
+  <div class="collection-label"><span>Research, demonstrations & group tools</span><span>{{ site.data.projects | where: "category", "clinical" | size }} projects ↓</span></div>
   <div class="projects-stack">
     {% for project in site.data.projects %}
     {% if project.category == 'clinical' %}
-    <article id="{{ project.id }}" class="project-card project-{{ project.id }}{% if project.spotlight %} project-spotlight{% endif %}" aria-labelledby="{{ project.id }}-title">
+    <article id="{{ project.id }}" class="project-card project-{{ project.id }}{% if project.spotlight or project.wide %} project-wide{% endif %}{% if project.spotlight %} project-spotlight{% endif %}" aria-labelledby="{{ project.id }}-title">
       <div class="project-art" aria-hidden="true"><span class="art-number">0{{ forloop.index }} / Clinical</span>{% include project-art.html id=project.id %}</div>
       <div class="project-details">
       <div class="project-meta"><span>{{ project.tag | escape }}</span><span class="status-badge status-{{ project.status | slugify }}">{{ project.status | escape }}</span></div>
