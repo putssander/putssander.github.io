@@ -7,6 +7,7 @@
   evaluation_url: https://sanderputs.com/tumorboard-precedents-demo/evaluation.html
   tag: Advisory-board preparation
   status: Research demo
+  category: clinical
   context: Clinical Data Science
   release_date: "2026-11-06"
   release_label: Demo released
@@ -26,6 +27,7 @@
   url: https://sanderputs.com/4dpicture-danish/demo/index.html
   tag: Language & patient experience
   status: Research demo
+  category: clinical
   context: Clinical Data Science · 4D PICTURE
   release_date: "2026-08-28"
   release_label: Demo released
@@ -42,6 +44,7 @@
   url: https://sanderputs.com/trialschema/
   tag: Clinical trial criteria
   status: Live
+  category: clinical
   context: Clinical Data Science
   release_date: "2026-05-20"
   release_label: Released
@@ -58,6 +61,7 @@
   url: https://medmorf.com
   tag: Private medical document tools
   status: Live
+  category: clinical
   context: Clinical Data Science
   release_label: Release date unconfirmed
   summary: Translate, anonymise and summarise medical documents on your device.
@@ -71,6 +75,7 @@
   name: CEI-Trace
   tag: Clinical coding research
   status: In development
+  category: clinical
   context: Clinical Data Science
   release_label: Release to be announced
   summary: Trace clinical coding decisions back to the official rulebook.
@@ -84,7 +89,7 @@
   url: https://actuelly.com
   tag: iPhone & Mac app
   status: Coming soon
-  featured: true
+  category: independent
   context: Independent project
   release_label: Release to be announced
   summary: A new way to read the news on iPhone and Mac.
@@ -92,3 +97,15 @@
     A personal news project exploring a new way to read the news,
     coming to iPhone and Mac.
   link_label: Visit Actuelly
+
+- id: augible
+  name: Augible
+  category: independent
+  tag: Company direction
+  status: In development
+  context: Independent work
+  release_label: Release to be announced
+  summary: A direction for independent products that extend human skills with AI.
+  description: >-
+    Hybrid human–AI tools that extend what people can do, with human skill
+    and judgement at the centre. A direction for future independent products.

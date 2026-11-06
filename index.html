@@ -3,10 +3,10 @@ layout: default
 ---
 <section class="hero" aria-labelledby="intro-title">
   <div class="hero-copy">
-    <p class="eyebrow">Research / tools / experiments</p>
+    <p class="eyebrow">Clinical research / independent projects</p>
     <h1 id="intro-title">Language,<br>put to<br><span>work.</span></h1>
     <div class="hero-bottom">
-      <p>I’m Sander Puts. I build language technology for healthcare, with evidence people can inspect and decisions they can review.</p>
+      <p>I’m Sander Puts. I research language technology for healthcare at Maastro Clinic and Maastricht University. Alongside that work, I develop my own products and experiments.</p>
       <a class="hero-enter" href="#projects" aria-label="Explore the projects"><span aria-hidden="true">↘</span></a>
     </div>
   </div>
@@ -25,16 +25,19 @@ layout: default
     <p class="art-footer"><span>Different forms.<br>Shared meaning.</span><span>Clinical NLP<br>Human-centred AI</span></p>
   </div>
 </section>
-<div class="intro-strip"><p>Maastro Clinic & Maastricht University</p><p>Clinical Data Science</p><a href="#project-index">Project index & release dates <span aria-hidden="true">↗</span></a></div>
+<nav class="work-directions" aria-label="Explore the two areas of my work">
+  <a class="direction-clinical" href="#projects"><span class="direction-number">01</span><span><strong>Clinical research</strong><small>Maastro Clinic & Maastricht University</small></span><span aria-hidden="true">↘</span></a>
+  <a class="direction-independent" href="#independent"><span class="direction-number">02</span><span><strong>Independent projects</strong><small>My own products & experiments</small></span><span aria-hidden="true">↘</span></a>
+</nav>
 
 <section id="projects" class="work-section" aria-labelledby="projects-title">
   <header class="section-intro">
-    <div><p class="section-index">01 / Selected work</p><h2 id="projects-title">Ideas in<br><em>practice.</em></h2></div>
-    <p class="section-summary">A collection of research software and public demonstrations. Made to explore what language technology can do in practice.</p>
+    <div><p class="section-index">01 / Clinical Data Science</p><h2 id="projects-title">Clinical<br><em>research.</em></h2></div>
+    <p class="section-summary">Research software and demonstrations from my work at Maastro Clinic and Maastricht University. Focused on language, healthcare and human-centred AI.</p>
   </header>
   <div class="projects-stack">
     {% for project in site.data.projects %}
-    {% unless project.featured %}
+    {% if project.category == 'clinical' %}
     <article id="{{ project.id }}" class="project-card project-{{ project.id }}{% if project.spotlight %} project-spotlight{% endif %}" aria-labelledby="{{ project.id }}-title">
       <div class="project-art" aria-hidden="true">{% include project-art.html id=project.id %}</div>
       <div class="project-details">
@@ -57,7 +60,7 @@ layout: default
       </div>
       </div>
     </article>
-    {% endunless %}
+    {% endif %}
     {% endfor %}
   </div>
 
@@ -69,43 +72,40 @@ layout: default
 </section>
 
 <section id="independent" class="featured-section" aria-labelledby="independent-title">
-  <header class="section-intro"><div><p class="section-index">02 / Independent work</p><h2 id="independent-title">Other curiosities.</h2></div></header>
+  <header class="section-intro"><div><p class="section-index">02 / Personal projects</p><h2 id="independent-title">Independent<br><em>work.</em></h2></div><p class="section-summary">My own products and experiments, developed outside my clinical research role. A space to explore news, technology and future business ideas.</p></header>
   <div class="independent-grid">
-    {% for project in site.data.projects %}{% if project.featured %}
-    <article id="{{ project.id }}" class="independent-card independent-actuelly" aria-labelledby="{{ project.id }}-title">
-      <div class="independent-art news-art" aria-hidden="true"><span>Now.</span><span>Next.</span><i>actuelly</i></div>
+    {% for project in site.data.projects %}{% if project.category == 'independent' %}
+    <article id="{{ project.id }}" class="independent-card independent-{{ project.id }}" aria-labelledby="{{ project.id }}-title">
+      {% if project.id == 'actuelly' %}<div class="independent-art news-art" aria-hidden="true"><span>Now.</span><span>Next.</span><i>actuelly</i></div>{% else %}<div class="independent-art augment-art" aria-hidden="true"><span>au</span><i>↗</i></div>{% endif %}
       <p class="eyebrow">{{ project.tag | escape }} · {{ project.status | escape }}</p>
       <h3 id="{{ project.id }}-title">{{ project.name | escape }}</h3>
       <p>{{ project.description | escape }}</p>
       <p class="release-date">{{ project.release_label | escape }}</p>
-      <a class="arrow-link" href="{{ project.url }}">{{ project.link_label | escape }} <span aria-hidden="true">↗</span></a>
+      {% if project.url %}<a class="arrow-link" href="{{ project.url }}">{{ project.link_label | escape }} <span aria-hidden="true">↗</span></a>{% endif %}
     </article>
     {% endif %}{% endfor %}
-    <article id="augible" class="independent-card independent-augible" aria-labelledby="augible-title">
-      <div class="independent-art augment-art" aria-hidden="true"><span>au</span><i>↗</i></div>
-      <p class="eyebrow">Company direction · In development</p>
-      <h3 id="augible-title">Augible</h3>
-      <p>Hybrid human–AI tools that extend what people can do, with human skill and judgement at the centre.</p>
-      <p class="release-date">A direction for future products.</p>
-    </article>
   </div>
 </section>
 
 <section id="project-index" class="index-section" aria-labelledby="index-title">
-  <header class="section-intro"><div><p class="section-index">03 / The index</p><h2 id="index-title">The work.<br>The details.</h2></div><p class="section-summary">An overview of every project, its current status and its first verified public release.</p></header>
+  <header class="section-intro"><div><p class="section-index">03 / The index</p><h2 id="index-title">The work.<br>The details.</h2></div><p class="section-summary">Clinical research and independent projects, grouped separately with their status and first verified public release.</p></header>
   <div class="overview-wrap">
     <table class="project-overview">
       <caption class="sr-only">Project overview with current status and public release dates</caption>
       <thead><tr><th scope="col">Project / focus</th><th scope="col">Status</th><th scope="col">Public release</th></tr></thead>
+      {% assign categories = 'clinical,independent' | split: ',' %}
+      {% for category in categories %}
       <tbody>
-      {% for project in site.data.projects %}
+        <tr class="index-group index-group-{{ category }}"><th colspan="3" scope="rowgroup">{% if category == 'clinical' %}01 / Clinical research <span>Maastro Clinic & Maastricht University</span>{% else %}02 / Independent projects <span>My own products & experiments</span>{% endif %}</th></tr>
+      {% for project in site.data.projects %}{% if project.category == category %}
         <tr>
           <th scope="row"><a href="#{{ project.id }}">{{ project.name | escape }} <span aria-hidden="true">↘</span></a><span class="overview-summary">{{ project.summary | escape }}</span></th>
           <td><span class="status-badge status-{{ project.status | slugify }}">{{ project.status | escape }}</span></td>
           <td>{% if project.release_date %}<time datetime="{{ project.release_date }}">{{ project.release_date | date: "%d %b %Y" }}</time>{% elsif project.status == 'Live' %}<span class="date-pending">Date unconfirmed</span>{% else %}<span class="date-pending">To be announced</span>{% endif %}</td>
         </tr>
-      {% endfor %}
+      {% endif %}{% endfor %}
       </tbody>
+      {% endfor %}
     </table>
   </div>
   <p class="release-note">Dates mark the first verified public release or demo publication. Unannounced and unconfirmed dates are shown explicitly.</p>
