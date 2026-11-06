@@ -60,6 +60,11 @@ article[id] { scroll-margin-top: 20px; }
 .work-directions small { display: block; margin-top: 6px; font-size: 11px; }
 .work-directions > a > span:last-child { margin-left: auto; font-size: 34px; }
 .work-section, .featured-section, .writing-section, .about-section, .index-section { padding: 80px var(--gutter); }
+.independent-tieptop { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); border: 1px solid rgba(247,245,239,.4); }
+.independent-tieptop .typing-art { height: 100%; min-height: 350px; margin: 0; background: #c5d9c7; }
+.typing-art svg { display: block; width: 100%; height: 100%; }
+.independent-tieptop .independent-content { padding: clamp(24px, 3vw, 44px); align-self: center; }
+.independent-tieptop h3 { font-size: clamp(44px, 5vw, 70px); color: var(--yellow); }
 .section-intro { display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; margin-bottom: 48px; }
 .section-index { margin-bottom: 24px; }
 h2 { margin-bottom: 0; font-size: clamp(40px, 6.2vw, 88px); font-weight: 700; line-height: .97; letter-spacing: -.065em; }
@@ -111,7 +116,7 @@ h2 em { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
 .augment-art span { font-size: clamp(160px, 23vw, 340px); font-weight: 750; letter-spacing: -.13em; line-height: .8; margin-left: -.15em; }
 .augment-art i { position: absolute; right: 7%; top: 2%; font-size: clamp(80px, 13vw, 180px); font-weight: 400; line-height: 1; font-style: normal; color: var(--red); }
 .independent-card h3 { font-weight: 700; font-size: 45px; line-height: 1; letter-spacing: -.06em; margin: 18px 0; }
-.independent-card > p:not(.eyebrow):not(.release-date) { max-width: 46ch; font-size: 16px; }
+.independent-content > p:not(.eyebrow):not(.release-date) { max-width: 46ch; font-size: 16px; }
 .independent-card .release-date { margin: 24px 0 18px; color: var(--yellow); }
 .index-section { background: var(--paper); }
 .index-section h2 { font-size: clamp(36px, 4.8vw, 68px); }
@@ -224,6 +229,8 @@ h2 em { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
   .research-foundation > a { grid-column: 1; }
   .foundation-label { margin-bottom: 0; }
   .independent-grid { grid-template-columns: 1fr; gap: 44px; }
+  .independent-tieptop { grid-template-columns: minmax(0, 1fr); }
+  .independent-tieptop .typing-art { min-height: 0; height: auto; aspect-ratio: 8 / 5; }
   .independent-art { height: 340px; }
   .news-art > span { font-size: clamp(90px, 19vw, 150px); }
   .augment-art span { font-size: 280px; }

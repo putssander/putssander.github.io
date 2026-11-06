@@ -84,6 +84,21 @@
     dataset conventions kept in a separate layer. Each code retains a trace
     that a coder can review. Code, notebooks and models are planned for release.
 
+- id: tieptop
+  name: TiepTop
+  url: https://tieptop.nl
+  tag: Typing practice & play
+  status: Live
+  category: independent
+  context: Independent project
+  release_label: Release date unconfirmed
+  summary: Build typing skills with lessons, real news and friendly competition.
+  description: >-
+    A Dutch typing platform that turns practice into play. Learn the keyboard
+    step by step, practise with real news, challenge friends and follow your
+    speed and progress over time.
+  link_label: Try TiepTop
+
 - id: actuelly
   name: Actuelly
   url: https://actuelly.com

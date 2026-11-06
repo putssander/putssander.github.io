@@ -72,16 +72,18 @@ layout: default
 </section>
 
 <section id="independent" class="featured-section" aria-labelledby="independent-title">
-  <header class="section-intro"><div><p class="section-index">02 / Personal projects</p><h2 id="independent-title">Independent<br><em>work.</em></h2></div><p class="section-summary">My own products and experiments, developed outside my clinical research role. A space to explore news, technology and future business ideas.</p></header>
+  <header class="section-intro"><div><p class="section-index">02 / Personal projects</p><h2 id="independent-title">Independent<br><em>work.</em></h2></div><p class="section-summary">My own products and experiments, developed outside my clinical research role. A space to explore learning, news, technology and future business ideas.</p></header>
   <div class="independent-grid">
     {% for project in site.data.projects %}{% if project.category == 'independent' %}
     <article id="{{ project.id }}" class="independent-card independent-{{ project.id }}" aria-labelledby="{{ project.id }}-title">
-      {% if project.id == 'actuelly' %}<div class="independent-art news-art" aria-hidden="true"><span>Now.</span><span>Next.</span><i>actuelly</i></div>{% else %}<div class="independent-art augment-art" aria-hidden="true"><span>au</span><i>↗</i></div>{% endif %}
+      {% if project.id == 'tieptop' %}<div class="independent-art typing-art" aria-hidden="true">{% include tieptop-art.svg %}</div>{% elsif project.id == 'actuelly' %}<div class="independent-art news-art" aria-hidden="true"><span>Now.</span><span>Next.</span><i>actuelly</i></div>{% else %}<div class="independent-art augment-art" aria-hidden="true"><span>au</span><i>↗</i></div>{% endif %}
+      <div class="independent-content">
       <p class="eyebrow">{{ project.tag | escape }} · {{ project.status | escape }}</p>
-      <h3 id="{{ project.id }}-title">{{ project.name | escape }}</h3>
+      <h3 id="{{ project.id }}-title">{% if project.url %}<a href="{{ project.url }}">{{ project.name | escape }}</a>{% else %}{{ project.name | escape }}{% endif %}</h3>
       <p>{{ project.description | escape }}</p>
-      <p class="release-date">{{ project.release_label | escape }}</p>
+      <p class="release-date">{{ project.release_label | escape }}{% if project.release_date %} <time datetime="{{ project.release_date }}">{{ project.release_date | date: "%d %b %Y" }}</time>{% endif %}</p>
       {% if project.url %}<a class="arrow-link" href="{{ project.url }}">{{ project.link_label | escape }} <span aria-hidden="true">↗</span></a>{% endif %}
+      </div>
     </article>
     {% endif %}{% endfor %}
   </div>
@@ -122,7 +124,7 @@ layout: default
 <section id="about" class="about-section" aria-labelledby="about-title">
   <div><p class="section-index">05 / About</p><h2 id="about-title">Curious by nature.<br><em>Practical by design.</em></h2></div>
   <div class="about-copy">
-    <p>My work sits where language, healthcare and AI meet. At Clinical Data Science, I build intelligent assistants for clinical workflows. Outside that work, I’m developing Actuelly as an independent project and shaping the direction for Augible.</p>
+    <p>My work sits where language, healthcare and AI meet. At Clinical Data Science, I build intelligent assistants for clinical workflows. Outside that work, I’m building TiepTop and Actuelly as independent projects and shaping the direction for Augible.</p>
     <nav class="profile-links" aria-label="Profiles">
       <a href="https://www.clinicaldatascience.nl/sander-puts">CDS profile ↗</a>
       <a href="https://github.com/putssander">GitHub ↗</a>
