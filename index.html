@@ -3,7 +3,7 @@ layout: default
 ---
 <section class="hero" aria-labelledby="intro-title">
   <div class="hero-copy">
-    <p class="eyebrow">Clinical research / independent projects</p>
+    <p class="eyebrow"><span class="intro-dot" aria-hidden="true"></span> Sander Puts / Researcher & builder</p>
     <h1 id="intro-title">Language,<br>put to<br><span>work.</span></h1>
     <div class="hero-bottom">
       <p>I’m Sander Puts. I research language technology for healthcare at Maastro Clinic and Maastricht University. Alongside that work, I develop my own products and experiments.</p>
@@ -12,17 +12,9 @@ layout: default
   </div>
   <div class="hero-art" aria-hidden="true">
     <div class="art-caption"><span>Language × human judgement</span><span>01—∞</span></div>
-    <svg class="language-print" viewBox="0 0 650 680" xmlns="http://www.w3.org/2000/svg">
-      <defs><pattern id="hero-lines" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-25)"><path d="M0 0V9" stroke="#171717" stroke-width="3"/></pattern></defs>
-      <circle cx="350" cy="330" r="255" fill="#ff583d"/>
-      <path d="M38 570V124H484V570Z" fill="url(#hero-lines)"/>
-      <text x="85" y="475" fill="#3139d5" font-family="Helvetica,Arial,sans-serif" font-size="530" font-weight="800" letter-spacing="-55">a</text>
-      <text x="330" y="555" fill="#f5f045" font-family="Georgia,serif" font-size="445" font-style="italic">a</text>
-      <path d="M445 83H575V213M572 86L432 226" fill="none" stroke="#171717" stroke-width="18"/>
-      <circle cx="126" cy="545" r="50" fill="#f5f045"/>
-      <path d="M100 545H152M126 519V571" stroke="#171717" stroke-width="8"/>
-    </svg>
-    <p class="art-footer"><span>Different forms.<br>Shared meaning.</span><span>Clinical NLP<br>Human-centred AI</span></p>
+    <img class="language-sculpture" src="{{ '/assets/images/language-sculpture.webp' | relative_url }}" width="1254" height="1254" alt="" fetchpriority="high">
+    <span class="art-seal">Different forms.<br><em>Shared meaning.</em><span>↗</span></span>
+    <p class="art-footer"><span>Study No. 01 / Language in form</span><span>2026</span></p>
   </div>
 </section>
 <nav class="work-directions" aria-label="Explore the two areas of my work">
@@ -35,11 +27,12 @@ layout: default
     <div><p class="section-index">01 / Clinical Data Science</p><h2 id="projects-title">Clinical<br><em>research.</em></h2></div>
     <p class="section-summary">Research software and demonstrations from my work at Maastro Clinic and Maastricht University. Focused on language, healthcare and human-centred AI.</p>
   </header>
+  <div class="collection-label"><span>Selected research & demonstrations</span><span>{{ site.data.projects | where: "category", "clinical" | size }} projects ↓</span></div>
   <div class="projects-stack">
     {% for project in site.data.projects %}
     {% if project.category == 'clinical' %}
     <article id="{{ project.id }}" class="project-card project-{{ project.id }}{% if project.spotlight %} project-spotlight{% endif %}" aria-labelledby="{{ project.id }}-title">
-      <div class="project-art" aria-hidden="true">{% include project-art.html id=project.id %}</div>
+      <div class="project-art" aria-hidden="true"><span class="art-number">0{{ forloop.index }} / Clinical</span>{% include project-art.html id=project.id %}</div>
       <div class="project-details">
       <div class="project-meta"><span>{{ project.tag | escape }}</span><span class="status-badge status-{{ project.status | slugify }}">{{ project.status | escape }}</span></div>
       <div class="project-body">
@@ -73,10 +66,11 @@ layout: default
 
 <section id="independent" class="featured-section" aria-labelledby="independent-title">
   <header class="section-intro"><div><p class="section-index">02 / Personal projects</p><h2 id="independent-title">Independent<br><em>work.</em></h2></div><p class="section-summary">My own products and experiments, developed outside my clinical research role. A space to explore learning, news, technology and future business ideas.</p></header>
+  <div class="collection-label"><span>Built from curiosity</span><span>{{ site.data.projects | where: "category", "independent" | size }} projects ↓</span></div>
   <div class="independent-grid">
     {% for project in site.data.projects %}{% if project.category == 'independent' %}
     <article id="{{ project.id }}" class="independent-card independent-{{ project.id }}" aria-labelledby="{{ project.id }}-title">
-      {% if project.id == 'tieptop' %}<div class="independent-art typing-art" aria-hidden="true">{% include tieptop-art.svg %}</div>{% elsif project.id == 'actuelly' %}<div class="independent-art news-art" aria-hidden="true"><span>Now.</span><span>Next.</span><i>actuelly</i></div>{% else %}<div class="independent-art augment-art" aria-hidden="true"><span>au</span><i>↗</i></div>{% endif %}
+      {% if project.id == 'tieptop' %}<div class="independent-art typing-art" aria-hidden="true"><img src="{{ '/assets/images/tieptop-sculpture.webp' | relative_url }}" width="1536" height="1024" alt="" loading="lazy" decoding="async"><span class="typing-caption">A little practice. A lot of progress. ↗</span></div>{% elsif project.id == 'actuelly' %}<div class="independent-art news-art" aria-hidden="true"><span>Now.</span><span>Next.</span><i>actuelly</i></div>{% else %}<div class="independent-art augment-art" aria-hidden="true"><span>au</span><i>↗</i></div>{% endif %}
       <div class="independent-content">
       <p class="eyebrow">{{ project.tag | escape }} · {{ project.status | escape }}</p>
       <h3 id="{{ project.id }}-title">{% if project.url %}<a href="{{ project.url }}">{{ project.name | escape }}</a>{% else %}{{ project.name | escape }}{% endif %}</h3>
