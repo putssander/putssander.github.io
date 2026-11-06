@@ -2,7 +2,8 @@ title: Sander Puts
 tagline: Clinical NLP researcher & human-centred AI builder
 description: >-
   Researcher at Maastro Clinic and Maastricht University, working on Clinical
-  NLP and human-centred AI. Building Actuelly and shaping Augible.
+  NLP and human-centred AI. Explore research software, public demonstrations,
+  release dates and independent projects.
 url: "https://sanderputs.com"
 author:
   name: Sander Puts
@@ -25,3 +26,6 @@ feed:
 exclude:
   - README.md
   - CLAUDE.md
+  - vendor
+  - Gemfile
+  - Gemfile.lock

@@ -1,51 +1,94 @@
-- name: Actuelly
+# Dates describe public availability, not repository creation or the latest commit.
+# Evidence is retained here so future edits do not turn estimates into release dates.
+- id: tumorboard-precedents
+  name: Tumorboard Precedents
+  url: https://sanderputs.com/tumorboard-precedents-demo/
+  about_url: https://sanderputs.com/tumorboard-precedents-demo/about.html
+  evaluation_url: https://sanderputs.com/tumorboard-precedents-demo/evaluation.html
+  tag: Advisory-board preparation
+  status: Research demo
+  context: Clinical Data Science
+  release_date: "2026-11-06"
+  release_label: Demo released
+  release_source: "GitHub Pages: first successful build, 2026-11-06T16:54:08Z."
+  spotlight: true
+  summary: Prepare a cancer-in-pregnancy case with guidelines and comparable earlier decisions.
+  description: >-
+    A research workspace that structures a request, checks cervical staging against
+    cited rules, and compares the case with earlier tumour-board discussions.
+    A printable board brief brings together guideline options, supporting quotes
+    and unresolved questions. The board writes the advice.
+  note: Fictional requests and paraphrased earlier cases. Technical demonstration; not clinically validated.
+  link_label: Explore the demo
+
+- id: metaphor-discovery
+  name: Metaphor Discovery
+  url: https://sanderputs.com/4dpicture-danish/demo/index.html
+  tag: Language & patient experience
+  status: Research demo
+  context: Clinical Data Science · 4D PICTURE
+  release_date: "2026-08-28"
+  release_label: Demo released
+  release_source: "GitHub Pages: first successful build, 2026-08-28T09:45:55Z."
+  summary: Find and review the metaphors people use to describe illness.
+  description: >-
+    Software proposes and ranks candidate expressions; researchers and patient
+    advisors review them. Built toward a multilingual Metaphor Menu, starting
+    with Danish, as part of the 4D PICTURE project.
+  link_label: Explore the demo
+
+- id: trialschema
+  name: TrialSchema
+  url: https://sanderputs.com/trialschema/
+  tag: Clinical trial criteria
+  status: Live
+  context: Clinical Data Science
+  release_date: "2026-05-20"
+  release_label: Released
+  release_source: "GitHub Pages: first successful build, 2026-05-20T15:40:43Z."
+  summary: Structure trial criteria for patient eligibility matching.
+  description: >-
+    Import clinical trials from Excel, CSV or JSON, normalise their eligibility
+    criteria for language models, and review the results in the browser.
+    No backend or telemetry.
+  link_label: Open TrialSchema
+
+- id: medmorf
+  name: Medmorf
+  url: https://medmorf.com
+  tag: Private medical document tools
+  status: Live
+  context: Clinical Data Science
+  release_label: Release date unconfirmed
+  summary: Translate, anonymise and summarise medical documents on your device.
+  description: >-
+    Browser-based tools for medical documents, including translation,
+    anonymisation, summarisation and transcription. Document processing stays
+    on the device, with results available for human review.
+  link_label: Open Medmorf
+
+- id: cei-trace
+  name: CEI-Trace
+  tag: Clinical coding research
+  status: In development
+  context: Clinical Data Science
+  release_label: Release to be announced
+  summary: Trace clinical coding decisions back to the official rulebook.
+  description: >-
+    Local language models apply human-written coding rules, with hospital and
+    dataset conventions kept in a separate layer. Each code retains a trace
+    that a coder can review. Code, notebooks and models are planned for release.
+
+- id: actuelly
+  name: Actuelly
   url: https://actuelly.com
   tag: iPhone & Mac app
   status: Coming soon
   featured: true
-  context: Private project
+  context: Independent project
+  release_label: Release to be announced
+  summary: A new way to read the news on iPhone and Mac.
   description: >-
-    A personal news project — a new way to read the news, coming to iPhone
-    and Mac.
-
-- name: CEI-Trace
-  url: https://github.com/putssander/CEI-Trace
-  tag: Open source & models
-  status: Coming soon
-  context: Clinical Data Science
-  description: >-
-    Clinical coding by the official, human-written rulebook with local
-    language models. Each hospital's or dataset's conventions sit in their own
-    layer, and every code keeps a trace a coder can check. Code, notebooks and
-    models for our ICD-10 coding study.
-
-- name: Medmorf
-  url: https://medmorf.com
-  tag: Web app
-  status: Live
-  context: Clinical Data Science
-  description: >-
-    Privacy-first AI processing of medical documents, entirely on-device.
-    Translate between 200+ languages, anonymize, summarize, and transcribe —
-    nothing ever leaves the browser.
-
-- name: TrialSchema
-  url: https://putssander.github.io/trialschema/
-  tag: Web app
-  status: Live
-  context: Clinical Data Science
-  description: >-
-    Structure clinical trial criteria for AI-powered patient eligibility
-    matching. Import trials from Excel, CSV, or JSON, normalize them for LLMs,
-    and review the results — no backend, no telemetry.
-
-- name: Metaphor Discovery
-  url: https://putssander.github.io/4dpicture-danish/demo/index.html
-  tag: Research demo
-  status: Demo
-  context: Clinical Data Science
-  description: >-
-    A human-in-the-loop pipeline for finding the metaphors people use to
-    describe illness. Software proposes and ranks candidate expressions;
-    researchers and patient advisors decide. Built toward a multilingual
-    Metaphor Menu, starting with Danish, as part of the 4D PICTURE project.
+    A personal news project exploring a new way to read the news,
+    coming to iPhone and Mac.
+  link_label: Visit Actuelly
