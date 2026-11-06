@@ -2,23 +2,97 @@
 layout: default
 ---
 <section class="hero" aria-labelledby="intro-title">
-  <p class="eyebrow">Sander Puts · Researcher & builder</p>
-  <h1 id="intro-title">Clinical language.<br><em>Human judgement.</em></h1>
-  <div class="hero-bottom">
-    <p class="hero-description">I build language technology for healthcare, with evidence people can inspect and decisions they can review. Researcher at Maastro Clinic and Maastricht University.</p>
-    <div class="hero-actions">
-      <a class="button-link" href="#projects">Explore the work <span aria-hidden="true">↓</span></a>
-      <a class="arrow-link" href="https://www.clinicaldatascience.nl/sander-puts">Research profile <span aria-hidden="true">↗</span></a>
+  <div class="hero-copy">
+    <p class="eyebrow">Research / tools / experiments</p>
+    <h1 id="intro-title">Language,<br>put to<br><span>work.</span></h1>
+    <div class="hero-bottom">
+      <p>I’m Sander Puts. I build language technology for healthcare, with evidence people can inspect and decisions they can review.</p>
+      <a class="hero-enter" href="#projects" aria-label="Explore the projects"><span aria-hidden="true">↘</span></a>
     </div>
   </div>
-  <div class="hero-topline"><span>Clinical NLP</span><span>Human-centred AI</span><span>Based in the Netherlands</span></div>
+  <div class="hero-art" aria-hidden="true">
+    <div class="art-caption"><span>Language × human judgement</span><span>01—∞</span></div>
+    <svg class="language-print" viewBox="0 0 650 680" xmlns="http://www.w3.org/2000/svg">
+      <defs><pattern id="hero-lines" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-25)"><path d="M0 0V9" stroke="#171717" stroke-width="3"/></pattern></defs>
+      <circle cx="350" cy="330" r="255" fill="#ff583d"/>
+      <path d="M38 570V124H484V570Z" fill="url(#hero-lines)"/>
+      <text x="85" y="475" fill="#3139d5" font-family="Helvetica,Arial,sans-serif" font-size="530" font-weight="800" letter-spacing="-55">a</text>
+      <text x="330" y="555" fill="#f5f045" font-family="Georgia,serif" font-size="445" font-style="italic">a</text>
+      <path d="M445 83H575V213M572 86L432 226" fill="none" stroke="#171717" stroke-width="18"/>
+      <circle cx="126" cy="545" r="50" fill="#f5f045"/>
+      <path d="M100 545H152M126 519V571" stroke="#171717" stroke-width="8"/>
+    </svg>
+    <p class="art-footer"><span>Different forms.<br>Shared meaning.</span><span>Clinical NLP<br>Human-centred AI</span></p>
+  </div>
 </section>
+<div class="intro-strip"><p>Maastro Clinic & Maastricht University</p><p>Clinical Data Science</p><a href="#project-index">Project index & release dates <span aria-hidden="true">↗</span></a></div>
 
 <section id="projects" class="work-section" aria-labelledby="projects-title">
   <header class="section-intro">
-    <div><p class="section-index">01 / Portfolio</p><h2 id="projects-title">Projects at a glance</h2></div>
-    <p class="section-summary">Research software, public demonstrations and independent projects. Explore what each does and where it stands.</p>
+    <div><p class="section-index">01 / Selected work</p><h2 id="projects-title">Ideas in<br><em>practice.</em></h2></div>
+    <p class="section-summary">A collection of research software and public demonstrations. Made to explore what language technology can do in practice.</p>
   </header>
+  <div class="projects-stack">
+    {% for project in site.data.projects %}
+    {% unless project.featured %}
+    <article id="{{ project.id }}" class="project-card project-{{ project.id }}{% if project.spotlight %} project-spotlight{% endif %}" aria-labelledby="{{ project.id }}-title">
+      <div class="project-art" aria-hidden="true">{% include project-art.html id=project.id %}</div>
+      <div class="project-details">
+      <div class="project-meta"><span>{{ project.tag | escape }}</span><span class="status-badge status-{{ project.status | slugify }}">{{ project.status | escape }}</span></div>
+      <div class="project-body">
+        <div class="project-heading">
+          {% if project.spotlight %}<p class="spotlight-label">Latest release / {{ project.release_date | date: "%Y" }}</p>{% endif %}
+          <h3 id="{{ project.id }}-title">{% if project.url %}<a href="{{ project.url }}">{{ project.name | escape }}</a>{% else %}{{ project.name | escape }}{% endif %}</h3>
+          <p class="project-context">{{ project.context | escape }}</p>
+        </div>
+        <div class="project-copy"><p>{{ project.description | escape }}</p>{% if project.note %}<p class="project-note">{{ project.note | escape }}</p>{% endif %}</div>
+      </div>
+      <div class="project-footer">
+        <p class="release-date">{{ project.release_label | escape }}{% if project.release_date %} <time datetime="{{ project.release_date }}">{{ project.release_date | date: "%d %b %Y" }}</time>{% endif %}</p>
+        <div class="project-actions">
+          {% if project.about_url %}<a href="{{ project.about_url }}">About the project <span aria-hidden="true">↗</span></a>{% endif %}
+          {% if project.evaluation_url %}<a href="{{ project.evaluation_url }}">Evaluation <span aria-hidden="true">↗</span></a>{% endif %}
+          {% if project.url %}<a class="project-link" href="{{ project.url }}">{{ project.link_label | escape }} <span aria-hidden="true">↗</span></a>{% endif %}
+        </div>
+      </div>
+      </div>
+    </article>
+    {% endunless %}
+    {% endfor %}
+  </div>
+
+  <aside class="research-foundation" aria-labelledby="thesis-title">
+    <p class="foundation-label">Research foundation<br>PhD thesis</p>
+    <div><h3 id="thesis-title">Harmonized steps</h3><p>My clinical work centres on hybrid human–AI assistants: helping radiologists structure reports and supporting ICD-10 coding, while keeping validation and correction in human hands.</p></div>
+    <a class="arrow-link" href="https://cris.maastrichtuniversity.nl/en/publications/harmonized-steps-orchestrating-healthcare-transformation-with-nat/">Read the thesis <span aria-hidden="true">↗</span></a>
+  </aside>
+</section>
+
+<section id="independent" class="featured-section" aria-labelledby="independent-title">
+  <header class="section-intro"><div><p class="section-index">02 / Independent work</p><h2 id="independent-title">Other curiosities.</h2></div></header>
+  <div class="independent-grid">
+    {% for project in site.data.projects %}{% if project.featured %}
+    <article id="{{ project.id }}" class="independent-card independent-actuelly" aria-labelledby="{{ project.id }}-title">
+      <div class="independent-art news-art" aria-hidden="true"><span>Now.</span><span>Next.</span><i>actuelly</i></div>
+      <p class="eyebrow">{{ project.tag | escape }} · {{ project.status | escape }}</p>
+      <h3 id="{{ project.id }}-title">{{ project.name | escape }}</h3>
+      <p>{{ project.description | escape }}</p>
+      <p class="release-date">{{ project.release_label | escape }}</p>
+      <a class="arrow-link" href="{{ project.url }}">{{ project.link_label | escape }} <span aria-hidden="true">↗</span></a>
+    </article>
+    {% endif %}{% endfor %}
+    <article id="augible" class="independent-card independent-augible" aria-labelledby="augible-title">
+      <div class="independent-art augment-art" aria-hidden="true"><span>au</span><i>↗</i></div>
+      <p class="eyebrow">Company direction · In development</p>
+      <h3 id="augible-title">Augible</h3>
+      <p>Hybrid human–AI tools that extend what people can do, with human skill and judgement at the centre.</p>
+      <p class="release-date">A direction for future products.</p>
+    </article>
+  </div>
+</section>
+
+<section id="project-index" class="index-section" aria-labelledby="index-title">
+  <header class="section-intro"><div><p class="section-index">03 / The index</p><h2 id="index-title">The work.<br>The details.</h2></div><p class="section-summary">An overview of every project, its current status and its first verified public release.</p></header>
   <div class="overview-wrap">
     <table class="project-overview">
       <caption class="sr-only">Project overview with current status and public release dates</caption>
@@ -36,70 +110,17 @@ layout: default
   </div>
   <p class="release-note">Dates mark the first verified public release or demo publication. Unannounced and unconfirmed dates are shown explicitly.</p>
 
-  <div class="work-heading"><h2>Research & clinical tools</h2><a class="arrow-link" href="https://www.clinicaldatascience.nl/sander-puts">Clinical Data Science <span aria-hidden="true">↗</span></a></div>
-  <div class="projects-stack">
-    {% for project in site.data.projects %}
-    {% unless project.featured %}
-    <article id="{{ project.id }}" class="project-card{% if project.spotlight %} project-spotlight{% endif %}" aria-labelledby="{{ project.id }}-title">
-      <div class="project-meta"><span>{{ project.tag | escape }}</span><span class="status-badge status-{{ project.status | slugify }}">{{ project.status | escape }}</span></div>
-      <div class="project-body">
-        <div class="project-heading">
-          {% if project.spotlight %}<p class="spotlight-label">Latest public demonstration</p>{% endif %}
-          <h3 id="{{ project.id }}-title">{% if project.url %}<a href="{{ project.url }}">{{ project.name | escape }}</a>{% else %}{{ project.name | escape }}{% endif %}</h3>
-          <p class="project-context">{{ project.context | escape }}</p>
-        </div>
-        <div class="project-copy"><p>{{ project.description | escape }}</p>{% if project.note %}<p class="project-note">{{ project.note | escape }}</p>{% endif %}</div>
-      </div>
-      <div class="project-footer">
-        <p class="release-date">{{ project.release_label | escape }}{% if project.release_date %} <time datetime="{{ project.release_date }}">{{ project.release_date | date: "%d %b %Y" }}</time>{% endif %}</p>
-        <div class="project-actions">
-          {% if project.about_url %}<a href="{{ project.about_url }}">About the project <span aria-hidden="true">↗</span></a>{% endif %}
-          {% if project.evaluation_url %}<a href="{{ project.evaluation_url }}">Evaluation <span aria-hidden="true">↗</span></a>{% endif %}
-          {% if project.url %}<a class="project-link" href="{{ project.url }}">{{ project.link_label | escape }} <span aria-hidden="true">↗</span></a>{% endif %}
-        </div>
-      </div>
-    </article>
-    {% endunless %}
-    {% endfor %}
-  </div>
-
-  <aside class="research-foundation" aria-labelledby="thesis-title">
-    <p class="foundation-label">Research foundation<br>PhD thesis</p>
-    <div><h3 id="thesis-title">Harmonized steps</h3><p>My clinical work centres on hybrid human–AI assistants: helping radiologists structure reports and supporting ICD-10 coding, while keeping validation and correction in human hands.</p></div>
-    <a class="arrow-link" href="https://cris.maastrichtuniversity.nl/en/publications/harmonized-steps-orchestrating-healthcare-transformation-with-nat/">Read the thesis <span aria-hidden="true">↗</span></a>
-  </aside>
-</section>
-
-<section class="featured-section" aria-labelledby="independent-title">
-  <header class="section-intro"><div><p class="section-index">02 / Independent work</p><h2 id="independent-title">Beyond the research</h2></div></header>
-  <div class="independent-grid">
-    {% for project in site.data.projects %}{% if project.featured %}
-    <article id="{{ project.id }}" class="independent-card" aria-labelledby="{{ project.id }}-title">
-      <p class="eyebrow">{{ project.tag | escape }} · {{ project.status | escape }}</p>
-      <h3 id="{{ project.id }}-title">{{ project.name | escape }}</h3>
-      <p>{{ project.description | escape }}</p>
-      <p class="release-date">{{ project.release_label | escape }}</p>
-      <a class="arrow-link" href="{{ project.url }}">{{ project.link_label | escape }} <span aria-hidden="true">↗</span></a>
-    </article>
-    {% endif %}{% endfor %}
-    <article id="augible" class="independent-card" aria-labelledby="augible-title">
-      <p class="eyebrow">Company direction · In development</p>
-      <h3 id="augible-title">Augible</h3>
-      <p>Hybrid human–AI tools that extend what people can do, with human skill and judgement at the centre.</p>
-      <p class="release-date">A direction for future products.</p>
-    </article>
-  </div>
 </section>
 
 <section id="writing" class="writing-section" aria-labelledby="writing-title">
-  <header class="section-intro"><div><p class="section-index">03 / Writing</p><h2 id="writing-title">Notes from the work</h2></div><a class="arrow-link" href="{{ '/blog/' | relative_url }}">All notes <span aria-hidden="true">→</span></a></header>
+  <header class="section-intro"><div><p class="section-index">04 / Writing</p><h2 id="writing-title">Field notes.</h2></div><a class="arrow-link" href="{{ '/blog/' | relative_url }}">All notes <span aria-hidden="true">→</span></a></header>
   {% if site.posts.size > 0 %}
   <ul class="post-list">{% for post in site.posts limit: 5 %}<li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a><span aria-hidden="true">↗</span></li>{% endfor %}</ul>
   {% else %}<p>First note coming soon.</p>{% endif %}
 </section>
 
 <section id="about" class="about-section" aria-labelledby="about-title">
-  <div><p class="section-index">04 / About</p><h2 id="about-title">Research with<br>a practical purpose.</h2></div>
+  <div><p class="section-index">05 / About</p><h2 id="about-title">Curious by nature.<br><em>Practical by design.</em></h2></div>
   <div class="about-copy">
     <p>My work sits where language, healthcare and AI meet. At Clinical Data Science, I build intelligent assistants for clinical workflows. Outside that work, I’m developing Actuelly as an independent project and shaping the direction for Augible.</p>
     <nav class="profile-links" aria-label="Profiles">
