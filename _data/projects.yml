@@ -63,7 +63,9 @@
   status: Live
   category: clinical
   context: Clinical Data Science
-  release_label: Release date unconfirmed
+  release_date: "2025-10-28"
+  release_label: Released
+  release_source: "GitHub Pages: first successful deployment job 53889137092, completed 2025-10-28T16:48:39Z (run 18881888973, deployment 3218896314)."
   summary: Translate, anonymise and summarise medical documents on your device.
   description: >-
     Browser-based tools for medical documents, including translation,
