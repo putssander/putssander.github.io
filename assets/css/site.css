@@ -93,7 +93,7 @@ h2 em { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
 .project-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; font-size: 10px; text-transform: uppercase; letter-spacing: .06em; font-weight: 650; }
 .status-badge { display: inline-block; white-space: nowrap; font-weight: 650; }
 .status-badge::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: currentColor; margin: 0 6px 1px 0; }
-.status-in-development::before, .status-coming-soon::before { background: transparent; border: 1px solid currentColor; }
+.status-in-development::before, .status-coming-soon::before, .status-work-in-progress::before { background: transparent; border: 1px solid currentColor; }
 .project-body { flex: 1; padding: 22px 0; }
 .project-card h3 { margin-bottom: 8px; font-size: clamp(28px, 3.4vw, 47px); font-weight: 700; letter-spacing: -.055em; line-height: 1; }
 .project-context { margin-bottom: 22px; font-size: 11px; color: var(--muted); }

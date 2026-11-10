@@ -73,6 +73,27 @@
     on the device, with results available for human review.
   link_label: Open Medmorf
 
+- id: sieve
+  name: Sieve
+  url: https://sanderputs.com/sieve/
+  tag: Systematic & scoping reviews
+  status: Work in progress
+  category: clinical
+  context: Clinical Data Science · literature research
+  release_date: "2026-11-03"
+  release_label: Preview online
+  release_source: "GitHub Pages: first successful deployment, 2026-11-03T16:08:12Z; deployment 7523944884 in putssander/sieve."
+  summary: Step-by-step guidance for literature reviews with frontier AI models.
+  description: >-
+    Guides a systematic or scoping review in eight steps, from question to
+    evidence table, and shows how to use frontier models such as ChatGPT and
+    Claude at each step: protocol, search and database translations,
+    deduplication, screening, data extraction and a PRISMA report. Every AI
+    answer comes with quotes that are checked against the papers, and the
+    researcher decides. Project data stays in the browser.
+  note: Work in progress. Methods and features are still being validated; the Methods & guidance page shows what is covered and what is not.
+  link_label: Explore Sieve
+
 - id: cei-trace
   name: CEI-Trace
   tag: Clinical coding research
